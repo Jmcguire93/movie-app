@@ -15,13 +15,4 @@ class ActorsController < ApplicationController
     render json: all_actors.as_json 
   end
 
-  def all_movies
-    all_movies = Movies.all 
-    render json: all_movies.as_json
-  end
-
-  def first_movie
-    first_movie = Movies.first 
-    render json: first_movie.as_json
-  end
 end
