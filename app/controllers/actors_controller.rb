@@ -10,4 +10,9 @@ class ActorsController < ApplicationController
     render json: last_actor.as_json
   end
 
+  def all_actors
+    all_actors = Actor.all 
+    render json: all_actors.as_json 
+  end
+
 end
