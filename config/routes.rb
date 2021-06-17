@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   get "/last_actor", controller: "actors", action: "last_actor"
 
   get "/all_actors", controller: "actors", action: "all_actors"
+
+  get "/all_movies", controller: "movies", action: "all_movies"
 end
