@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  get "/one_actor", controller: "actors", action: "one_actor"
+  get "/first_actor", controller: "actors", action: "first_actor"
 
-
+  get "/last_actor", controller: "actors", action: "last_actor"
 end
