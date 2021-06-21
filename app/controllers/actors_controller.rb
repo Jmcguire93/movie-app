@@ -15,4 +15,8 @@ class ActorsController < ApplicationController
     render json: all_actors.as_json 
   end
 
+  def display_actor
+    actor = Actor.find(params[:id])
+    render json: actor.as_json
+  end
 end
