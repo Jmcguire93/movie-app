@@ -13,9 +13,9 @@ class MoviesController < ApplicationController
 
   def create
     movie = Movie.new(
-      first_name: params["first_name"],
-      last_name: params["last_name"],
-      known_for: params["known_for"]
+      title: params["title"],
+      year: params["year"],
+      plot: params["plot"]
     )
 
     movie.save
@@ -26,9 +26,9 @@ class MoviesController < ApplicationController
     movie_id = params["id"]
     movie = Movie.find_by(id: movie_id)
 
-    movie.first_name = params["first_name"] || movie.first_name
-    movie.last_name = params["last_name"] || movie.last_name
-    movie.known_for = params["known_for"] || movie.known_for 
+    movie.title = params["title"] || movie.title
+    movie.year = params["year"] || movie.year
+    movie.plot = params["plot"] || movie.plot 
 
     movie.save
     render json: movie.as_json
