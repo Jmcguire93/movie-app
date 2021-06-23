@@ -34,7 +34,13 @@ class ActorsController < ApplicationController
     render json: actor.as_json
   end
   
-  
+  def destroy
+    actor_id = params["id"]
+    actor = Actor.find_by(id: actor_id)
+    actor.destroy
+
+    render json: {message: "Actor sucesfully canceled." }
+  end   
   
   # def last_actor
   #   last_actor = Actor.last_actor

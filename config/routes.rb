@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   post "actors", controller: "actors", action: "create"
 
   patch "/actors/:id", controller: "actors", action: "update"
+
+  delete "actors/:id", controller: "actors", action: "destroy"
   
   
   
