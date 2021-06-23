@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get "/actors/:id", controller: "actors", action: "show"
 
   post "actors", controller: "actors", action: "create"
+
+  patch "/actors/:id", controller: "actors", action: "update"
   
   
   
