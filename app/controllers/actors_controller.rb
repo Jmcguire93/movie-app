@@ -17,7 +17,8 @@ class ActorsController < ApplicationController
       last_name: params["last_name"],
       known_for: params["known_for"]
       gender: params["gender"],
-      age: params["age"]
+      age: params["age"],
+      views: params["views"]
     )
 
     actor.save
@@ -33,7 +34,7 @@ class ActorsController < ApplicationController
     actor.known_for = params["known_for"] || actor.known_for 
     actor.gender = params["gender"] || actor.gender 
     actor.age = params["age"] || actor.age 
-
+    actor.views = params["views"] || actor.views 
     actor.save
     render json: actor.as_json
   end
