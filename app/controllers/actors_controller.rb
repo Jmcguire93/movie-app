@@ -21,8 +21,10 @@ class ActorsController < ApplicationController
       views: params["views"]
     )
 
-    actor.save
-    render json: actor.as_json
+    if actor.save
+      render json: actor.as_json
+    else
+      render json: { errors: actor.errors.full_messages }
   end
   
   def update 
@@ -35,8 +37,12 @@ class ActorsController < ApplicationController
     actor.gender = params["gender"] || actor.gender 
     actor.age = params["age"] || actor.age 
     actor.views = params["views"] || actor.views 
-    actor.save
-    render json: actor.as_json
+    
+    if actor.save
+      render json: actor.as_json
+    else
+      render json { errors: actor.errors.full_messages }
+    end
   end
   
   def destroy
