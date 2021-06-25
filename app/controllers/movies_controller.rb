@@ -20,8 +20,10 @@ class MoviesController < ApplicationController
       english: params["english"]
     )
 
-    movie.save
-    render json: movie.as_json
+    if movie.save
+      render json: movie.as_json
+    else
+      render json { errors: movie.errors.full_messages }
   end
   
   def update 
@@ -34,8 +36,11 @@ class MoviesController < ApplicationController
     movie.director = params["director"] || movie.director
     movie.english = params["english"] || movie.english
 
-    movie.save
-    render json: movie.as_json
+    if movie.save
+      render json: movie.as_json
+    else
+      ender json { errors: movie.errors.full_messages }
+    end
   end
   
   def destroy
