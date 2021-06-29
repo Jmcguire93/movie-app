@@ -2,7 +2,7 @@ class ActorsController < ApplicationController
 
   def index
     actors = Actor.order(age: :desc)
-    render json: actors.as_json 
+    render json: actors
   end
 
   def show

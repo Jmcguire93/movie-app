@@ -2,7 +2,7 @@ class MoviesController < ApplicationController
   
   def index
     movies = Movie.here("english = ?", true) 
-    render json: movies.as_json 
+    render json: movies 
   end
 
   def show
