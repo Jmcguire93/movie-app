@@ -17,7 +17,7 @@ class MoviesController < ApplicationController
       year: params["year"],
       plot: params["plot"],
       director: params["director"],
-      english: params["english"]
+      english: params["english"],
     )
 
     if movie.save

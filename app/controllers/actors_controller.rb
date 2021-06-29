@@ -18,7 +18,8 @@ class ActorsController < ApplicationController
       known_for: params["known_for"]
       gender: params["gender"],
       age: params["age"],
-      views: params["views"]
+      views: params["views"],
+      movie_id: params["movie_id"]
     )
 
     if actor.save
@@ -37,6 +38,7 @@ class ActorsController < ApplicationController
     actor.gender = params["gender"] || actor.gender 
     actor.age = params["age"] || actor.age 
     actor.views = params["views"] || actor.views 
+    actor.movie_id = params["movie_id"]
     
     if actor.save
       render json: actor.as_json
