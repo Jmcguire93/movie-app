@@ -25,6 +25,10 @@ Rails.application.routes.draw do
   post "/users", controller: "users", action: "create"
 
   get "/users", controller: "users", action: "index"
+
+  patch "/users/:id", controller: "users", action: "update"
+
+  delete "users/:id", controller: "users", action: "destroy"
   
   
   

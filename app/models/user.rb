@@ -3,5 +3,5 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   has_many :movies
-  has_mant :actors
+  has_many :actors
 end
