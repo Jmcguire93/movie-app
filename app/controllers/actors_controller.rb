@@ -1,4 +1,5 @@
 class ActorsController < ApplicationController
+  before_action :authenticate_user, except: [:index, :show]
 
   def index
     actors = Actor.order(age: :desc)

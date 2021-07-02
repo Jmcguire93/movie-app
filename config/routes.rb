@@ -20,6 +20,11 @@ Rails.application.routes.draw do
   patch "/movies/:id", controller: "movies", action: "update"
 
   delete "movies/:id", controller: "movies", action: "destroy"
+
+
+  post "/users", controller: "users", action: "create"
+
+  get "/users", controller: "users", action: "index"
   
   
   

@@ -1,5 +1,6 @@
 class MoviesController < ApplicationController
-  
+  before_action :authenticate_user, except: [:index, :show]
+
   def index
     movies = Movie.here("english = ?", true) 
     render json: movies 
