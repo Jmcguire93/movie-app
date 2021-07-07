@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   delete "users/:id", controller: "users", action: "destroy"
 
 
-  get "/genres", controller: "genre", action: "index"
+  get "/genres", controller: "genres", action: "index"
   
 
   get "/movie_genres", controller: "movie_genres", action: "index"
