@@ -16,3 +16,14 @@ movie = Movie.create(title: "School of Rock", year: 2003, plot: "Overly enthusia
 
 movie = Movie.create(title: "Dodgeball: A True Underdog Story", year: 2004, plot: "Average Joe's Gym and its owner, Peter La Fleur (Vince Vaughn), are both down on their luck. A fancy competing gym called Globo-Gym, run by the maniacal health nut White Goodman (Ben Stiller), is about to put Average Joe's out of business unless Peter can raise $50,000 to keep his mortgage. To save the gym, Peter and a ragtag group of Average Joe's members and employees enter a dodgeball contest with a big cash prize. In response, White forms his own Globo-Gym team to rout the competition." )
 
+genres = Genre.create!([
+  {name: "Thriller"},
+  {name: "Comedy"},
+  {name: "Action"}
+])
+
+movie_genres = MovieGenre.create!([
+  {genre_id: 1, movie_id: 1},
+  {genre_id: 2, movie_id: 4},
+  {genre_id: 3, movie_id: 3}
+])

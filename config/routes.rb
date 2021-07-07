@@ -29,7 +29,12 @@ Rails.application.routes.draw do
   patch "/users/:id", controller: "users", action: "update"
 
   delete "users/:id", controller: "users", action: "destroy"
+
+
+  get "/genres", controller: "genre", action: "index"
   
+
+  get "/movie_genres", controller: "movie_genres", action: "index"
   
   
   
