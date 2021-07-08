@@ -36,6 +36,8 @@ Rails.application.routes.draw do
 
   get "/movie_genres", controller: "movie_genres", action: "index"
   
+  post "/movie_genres", controller: "movie_genres", action: "create"
+  
   
   
   
