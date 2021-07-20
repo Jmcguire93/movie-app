@@ -2,8 +2,8 @@ class MoviesController < ApplicationController
   before_action :authenticate_user, except: [:index, :show]
 
   def index
-    movies = Movie.here("english = ?", true) 
-    render json: movies 
+    movies = Movie.all
+    render json: movies.as_json 
   end
 
   def show
@@ -24,7 +24,8 @@ class MoviesController < ApplicationController
     if movie.save
       render json: movie.as_json
     else
-      render json { errors: movie.errors.full_messages }
+      render json: { errors: movie.errors.full_messages }
+    end
   end
   
   def update 
@@ -40,7 +41,7 @@ class MoviesController < ApplicationController
     if movie.save
       render json: movie.as_json
     else
-      ender json { errors: movie.errors.full_messages }
+      render json: { errors: movie.errors.full_messages }
     end
   end
   
